@@ -1,5 +1,14 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
+import Layout from '../components/layout/layout';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import {NotificationContextProvider} from '../../store/notification-context';
+
+export default function App({Component, pageProps}) {
+  return (
+    <NotificationContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NotificationContextProvider>
+  );
 }
