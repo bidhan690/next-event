@@ -1,7 +1,8 @@
 import {MongoClient} from 'mongodb';
 
+
 export async function getDb() {
-  const client = await MongoClient.connect('mongodb+srv://heygarmi654:bidhanmongo@cluster0.3qjkyhr.mongodb.net/?retryWrites=true&w=majority');
+  const client = await MongoClient.connect(process.env.MONGO_URI);
   return client;
 }
 

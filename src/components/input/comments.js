@@ -19,8 +19,9 @@ function Comments(props) {
         .then((response) => response.json())
         .then((data) => {
           setComment(data.comments);
+          isLoadingComments(false);
         });
-      isLoadingComments(false);
+      
     }
   }, [showComments, eventId]);
 
@@ -54,7 +55,7 @@ function Comments(props) {
       .then((response) => response.json())
       .then((data) => {
         setComment(data.comments);
-        isLoadingComments(false);
+        
       });
     // send data to API
   }
